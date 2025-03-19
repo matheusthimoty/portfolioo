@@ -1,9 +1,12 @@
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}", // Caminho para os arquivos do seu projeto
   ],
   theme: {
     extend: {
+      ontFamily: {
+        poppins: ['Poppins', 'sans-serif'], // Adiciona Poppins como uma nova família de fontes
+      },
       colors: {
         'midnight-purple': 'black', // Midnight Purple
         'deep-pink': '#9B59B6', // Rosa Profundo
@@ -12,21 +15,10 @@ module.exports = {
         'header-footer': '#1A1A1A', // Cinza escuro para header e footer
         'card-background': '#2D2D2D', // Cinza mais claro para os cards
       },
-    },
-  },
-  plugins: [],
-};
-
-module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
-  theme: {
-    extend: {
       backgroundImage: {
         'stars': "url('/stars.png')", // Caminho da imagem de estrelas
       },
     },
   },
-  plugins: [],
+  plugins: [], // Adicione plugins do Tailwind aqui, se necessário
 };
