@@ -1,30 +1,45 @@
+:root {
+  --color-primary: rgb(50, 55, 65); /* Cor primária */
+  --color-secondary: #61dafb; /* Cor secundária */
+  --font-size-base: calc(10px + 2vmin); /* Tamanho base da fonte */
+}
+
+/* Reset básico para garantir consistência entre navegadores */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos globais para o corpo da página */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: white;
+  background-color: var(--color-primary);
+}
+
+/* Container principal da aplicação */
 .App {
   text-align: center;
-}
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color:rgb(50, 55, 65);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Estilos para o logo */
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+/* Animação do logo */
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 @keyframes App-logo-spin {
@@ -33,5 +48,39 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Cabeçalho da aplicação */
+.App-header {
+  background-color: var(--color-primary);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-base);
+}
+
+/* Links na aplicação */
+.App-link {
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.App-link:hover {
+  color: darken(var(--color-secondary), 10%);
+}
+
+/* Estilos para telas menores (responsividade) */
+@media (max-width: 768px) {
+  .App-logo {
+    height: 30vmin; /* Reduz o tamanho do logo em telas menores */
+  }
+
+  .App-header {
+    font-size: calc(8px + 2vmin); /* Ajusta o tamanho da fonte para telas menores */
   }
 }
