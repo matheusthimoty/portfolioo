@@ -6,6 +6,7 @@ import Projects from "../components/Projects/Projects.jsx";
 import Contact from "../components/Contact/Contact.jsx";
 import Stats from "../components/Stats/Stats.jsx";
 import React, { useState, useEffect } from "react";
+import '../pages/Stars.css'; // Importe o CSS para as estrelas
 
 // Importe a imagem das estrelas
 import starsBackground from "../assets/stars.png";
@@ -29,7 +30,7 @@ const Typewriter = () => {
       setTypingSpeed(isDeleting ? 75 : 150);
 
       if (!isDeleting && text === currentText) {
-        setTimeout(() => setIsDeleting(true), 1000);
+        setTimeout(() => setIsDeleting(true), 2000);
       } else if (isDeleting && text === "") {
         setIsDeleting(false);
         setLoopNum((prev) => prev + 1);
@@ -75,14 +76,14 @@ const ScrollDown = () => {
 
 export default function LandingPage() {
   return (
-    <div className="bg-black min-h-screen">
+    <div className="bg-black min-h-screen relative">
       <Header />
       <main>
         {/* Seção Hero */}
         <section id="hero" className="text-white py-60 relative overflow-hidden">
-          {/* Background de estrelas */}
+          {/* Background animado de estrelas */}
           <div
-            className="absolute inset-0 bg-cover bg-center opacity-70"
+            className="absolute inset-0 stars bg-cover bg-center opacity-70"
             style={{
               backgroundImage: `url(${starsBackground})`,
               backgroundSize: "cover",
@@ -100,7 +101,7 @@ export default function LandingPage() {
             </p>
             {/* Botão de Call-to-Action */}
             <a
-              href="#about" // Aponte para a próxima seção
+              href="#skills" // Aponte para a seção de habilidades
               className="bg-gradient-to-r from-purple-700 to-pink-500 text-white px-8 py-4 rounded-lg hover:opacity-80 transition duration-300 text-lg font-semibold shadow-lg hover:shadow-purple-500/50 hover:scale-105 transform transition-transform"
             >
               Comece Agora
@@ -110,14 +111,14 @@ export default function LandingPage() {
           <ScrollDown />
         </section>
 
-        {/* Seção About */}
-        <About />
-
         {/* Seção Skills */}
         <Skills />
 
         {/* Seção Projects */}
         <Projects />
+
+        {/* Seção About */}
+        <About />
 
         {/* Seção Contact */}
         <Contact />

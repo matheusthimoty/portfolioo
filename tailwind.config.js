@@ -4,11 +4,11 @@ module.exports = {
   ],
   theme: {
     extend: {
-      ontFamily: {
+      fontFamily: { // Corrigido: estava "ontFamily"
         poppins: ['Poppins', 'sans-serif'], // Adiciona Poppins como uma nova família de fontes
       },
       colors: {
-        'midnight-purple': 'black', // Midnight Purple
+        'midnight-purple': '#000000', // Midnight Purple (preto)
         'deep-pink': '#9B59B6', // Rosa Profundo
         'text-gray': '#E5E7EB', // Branco acinzentado para textos
         'background-dark': '#000000', // Preto puro para o fundo
